@@ -15,7 +15,50 @@ public class Problem2 extends Robot
     }
 
     public void carpetRooms(){
-        
+        move();
+        faceNorth();
+        if(!frontIsClear()){
+
+        } else{
+                move();
+                if(!frontIsClear()){
+            move();
+            faceEast();
+            if(!frontIsClear()){
+                move();
+                faceWest();
+                if(!frontIsClear()){
+                    move();
+                    faceSouth();
+                    move();
+                }
+            } 
+        }
+            }
+    }
+    
+    public void faceNorth(){
+        while(!facingNorth()){
+            turnLeft();
+        }
+    }
+    
+    public void faceSouth(){
+        while(!facingSouth()){
+            turnLeft();
+        }
+    }
+    
+    public void faceWest(){
+        while(!facingWest()){
+            turnLeft();
+        }
+    }
+    
+    public void faceEast(){
+        while(!facingEast()){
+            turnLeft();
+        }
     }
 }
 
