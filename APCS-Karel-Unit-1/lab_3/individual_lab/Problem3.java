@@ -18,4 +18,3 @@ public class Problem3 extends Robot
         
     }
 }
-

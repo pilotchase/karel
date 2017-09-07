@@ -15,26 +15,45 @@ public class Problem2 extends Robot
     }
 
     public void carpetRooms(){
+        faceEast();
         move();
+        isRoom();
+        move();
+        move();
+        isRoom();
+        move();
+        move();
+        isRoom();
+        move();
+        isRoom();
+        move();
+        move();
+        isRoom();
+    }
+    
+    public void isRoom(){
         faceNorth();
-        if(!frontIsClear()){
-
-        } else{
-                move();
-                if(!frontIsClear()){
+        if(frontIsClear()){
             move();
-            faceEast();
             if(!frontIsClear()){
-                move();
                 faceWest();
                 if(!frontIsClear()){
-                    move();
-                    faceSouth();
-                    move();
+                    faceEast();
+                    if(!frontIsClear()){
+                        faceSouth();
+                        if(frontIsClear()){
+                            putBeeper();
+                            move();
+                            faceEast();
+                        }
+                    }
                 }
-            } 
-        }
+            } else {
+                faceSouth();
+                move();
+                faceEast();
             }
+        }
     }
     
     public void faceNorth(){
